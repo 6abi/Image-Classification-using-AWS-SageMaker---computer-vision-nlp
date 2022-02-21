@@ -48,7 +48,7 @@ Remember that your README should:
 The training output had a linear decay without oscillations.
 TODO: If not, suppose there was an error. What would that error look like and how would you have fixed it? Making some adjustments in the pretrained model to use a different set of the fully connected layers network.
 
-- ![result - test model](https://github.com/6abi/Image-Classification-using-AWS-SageMaker---computer-vision-nlp/blob/main/prints/result_2.png)
+- ![result - test model](https://github.com/6abi/Image-Classification-using-AWS-SageMaker---computer-vision-nlp/blob/main/prints/result_2.PNG)
 ## Model Deployment
 **TODO**: Give an overview of the deployed model and instructions on how to query the endpoint with a sample input.
 Model was deplyed in "ml.g4dn.xlarge" instance and were queried with images as input to the endpoint created as a result of model deployment. The Endpoint was storeged in S3 object after deployment.
