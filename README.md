@@ -15,8 +15,18 @@ The project is designed to be dataset independent so if there is a dataset that 
 Upload the data to an S3 bucket through the AWS Gateway so that SageMaker has access to the data. 
 
 ## Hyperparameter Tuning
-What kind of model did you choose for this experiment and why? Give an overview of the types of parameters and their ranges used for the hyperparameter search
+ResNet50 Model:
 
+* This project uses the ResNet-18 pre-trained model.
+* The ResNet-50 is a convolutional neural network that is 18 layers deep. This pre-trained version of the network is trained on more than a million images from the ImageNet database The pretrained network can classify images into 1000 object categories, such as keyboard, mouse, pencil, and many animals.
+* The dataset that we are going to use are an Image dataset which consist of images of dogs.
+* The dataset is divided into three parts training and validation and testing.
+For hyperparameters, I tuned the two following ones :
+
+Learning rate : -> default is 0.001 and the chosen range is =[0.0001, 0.1] -> learning rate is a ContinuousParameter.
+epochs: -> defaut is 1e-08 and the chosen range is= [1e-9, 1e-8] -> the epochs is a IntegerParameter
+Weight decay: -> default is 0.01 and the chosen range is = [1e-3, 1e-1]
+Batch size : -> The chosen range is = [ 64, 128] -> batch-size is a CategoricalParameter
 Remember that your README should:
 - Include a screenshot of completed training jobs
 - Logs metrics during the training process
@@ -24,16 +34,18 @@ Remember that your README should:
 - Retrieve the best best hyperparameters from all your training jobs
 
 ## Debugging and Profiling
-**TODO**: Give an overview of how you performed model debugging and profiling in Sagemaker
+ - Debugging and Profiling was done with the help of the sagemaker.debugger module.
+ - Amazon SageMaker Debugger provides full visibility into training jobs of state-of-the-art machine learning models.
+ - This SageMaker Debugger module provides high-level methods to set up Debugger configurations to monitor, profile, and debug your training job.
+ - Configure the Debugger-specific parameters when constructing a SageMaker estimator to gain visibility and insights into your training job.
 
 ### Results
-**TODO**: What are the results/insights did you get by profiling/debugging your model?
 
-**TODO** Remember to provide the profiler html/pdf file in your submission.
-
+The output is not as smooth as expected. Adding the layers to the pre-trained model can help make it smooth. TODO: If not, suppose there was an error. What would that error look like and how would you have fixed it? Making some adjustments in the pretrained model to use a different set of the fully connected layers network.
 
 ## Model Deployment
 **TODO**: Give an overview of the deployed model and instructions on how to query the endpoint with a sample input.
+Model was deplyed in "ml.g4dn.xlarge" instance and were queried with images as input to the endpoint created as a result of model deployment. The Endpoint was storeged in S3 object after deployment.
 
 **TODO** Remember to provide a screenshot of the deployed active endpoint in Sagemaker.
 
