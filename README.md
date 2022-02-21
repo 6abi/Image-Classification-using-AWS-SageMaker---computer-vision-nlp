@@ -10,7 +10,7 @@ Download/Make the dataset available.
 ## Dataset
 The provided dataset is the dogbreed classification dataset which can be found in the classroom.
 The project is designed to be dataset independent so if there is a dataset that is more interesting or relevant to your work, you are welcome to use it to complete the project.
-![dataset](https://github.com/6abi/Image-Classification-using-AWS-SageMaker---computer-vision-nlp/blob/main/prints/dataset.png)
+![dataset](https://github.com/6abi/Image-Classification-using-AWS-SageMaker---computer-vision-nlp/blob/main/prints/dataset.PNG)
 
 ### Access
 Upload the data to an S3 bucket through the AWS Gateway so that SageMaker has access to the data. 
